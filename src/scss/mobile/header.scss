@@ -1,0 +1,139 @@
+header {
+	background-color: $white;
+	margin: 2%;
+	margin-bottom: -2%;
+	padding: 4% 2%;
+	box-shadow: $default-shadow;
+	border-radius: 25px;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	.content {
+		flex: 3 0 70%;
+		display: flex;
+		flex-direction: column;
+	}
+	.logo {
+		flex: 2 0 66%;
+		img {
+			width: 15%;
+			padding-left: 2%;
+			margin: 0;	
+		}
+	}
+
+	.profile_image {
+		text-align: center;
+		font-family: $font-body;
+		color: $font-color;
+		margin-right: 2%;
+		img {
+			width: 60%;
+		}
+	}
+
+	.title {
+		flex: 1 0 8%;
+		font-family: $font-title;
+		font-weight: 600;
+		color: $primary-dark;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding-left: 3%;
+	}
+	#menu_hamburger {
+		width: 72px;
+		height: 33px;
+		display: flex;
+		flex-direction: column;
+		margin-left: 0%;
+		margin-right: 0%;
+		.line {
+			width: 90%;
+			margin-left: 5%;
+			margin: 2px;
+			flex: 1 0 auto;
+			background-color: $primary-dark;
+			transition-duration: $tr_t;
+			transition-property: transform, opacity;
+			transition-timing-function: ease-in-out;
+		}
+		&.active {
+			$loops: 4;
+			.line:nth-child(1) { 
+				transform: rotateZ(45+$loops*360deg) translate(4px, 7px);
+			}
+			.line:nth-child(2) { 
+				transform: rotateZ(45+$loops*360deg) translate(4px, 7px);
+				opacity: 0;
+			}
+			.line:nth-child(3) {
+				transform: rotateZ(-45+$loops*360deg) translate(7px, -10px);
+			}
+		 }
+
+	}
+
+	.menu {
+		@extend %card;
+		@include border-radius(12%, 7%);
+		border-radius: 25px;
+		position: fixed;
+		right: -70%;
+		top: 15vh;
+		width: 60%;
+		background-color: $primary-dark;
+		transition-duration: $tr_t;
+		transition-property: right, top;
+		transition-timing-function: ease-in-out;
+		z-index: 8;
+		&.active {
+			right: -4%;
+			border-top-right-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+		li {
+			box-shadow: $default-shadow, inset $default-shadow;
+			list-style: none;
+			text-align: center;
+			font-family: $font-body;
+			background-color: $white;
+			margin: 6% 2%; 
+			@include border-radius(9%, 49%);
+			border: 2px solid $font-color;
+			&.active {
+				a {
+					color: $primary-dark;
+					font-weight: 900;
+				}
+				box-shadow: inset $default-shadow;
+			}
+			a { 
+				color: $primary-dark;
+				text-decoration: none;
+				font-size: 1.1em;
+				padding: 5% 4%;
+				display: block;
+			}
+
+		}
+
+	}
+	#toggleLogout {
+		display: none;
+	}
+}
+
+
+header.logout {
+	.menu:not(.logout), .profile_image, #menu_hamburger {
+		display: none;
+	}
+	#toggleLogout {
+		display: block;
+		margin-right: 2%;
+	}
+}
+
+

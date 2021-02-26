@@ -1,0 +1,89 @@
+/*
+start pop up style
+*/
+[class^="btn"] {
+	//background-color: $primary;
+	padding: 2% 3%;
+	margin: 0 20%;
+	box-shadow: $default-shadow, inset $default-shadow;
+	//color: $white;
+	font-size: 1.2em;
+	@include border-radius(20%, 50%);
+	background-color: $white;
+	transition-property: background-color, box-shadow;
+	transition-duration: $tr_t;
+	cursor: pointer;
+	&:hover {
+		box-shadow: $default-shadow, inset 0 0 0;
+	}
+	&[class*="_cancel"] {
+		border: 3px solid $danger;
+		&:hover {
+			background-color: $danger;
+			color: $white;
+		}
+	}
+	&[class*="_ok"] {
+		border: 3px solid $accept;
+		&:hover {
+			background-color: $accept;
+			color: $white;
+		}
+	}
+	&[class*="_circle"] {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+	}
+	&[class*="_darker"] {
+		background-color: $primary-dark;
+		color: $white;
+	}
+	&[class*="--center"] {
+		display: block;
+		margin: auto;
+	}
+}
+
+
+
+.pop_up {
+	width: 90%;
+	left: 2.5%;
+	top: 5vh;
+	z-index: 51;
+	@include border-radius(9%, 15%);
+	.options {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		height: 20%;
+		margin: 10% 0;
+		button {
+			width: 40%;
+			margin: 0;
+			&:nth-child(1) {
+				margin-right: 10%;
+			}
+		}
+	}
+}
+
+#alert.pop_up {
+	.options button {margin: 0;}
+}
+
+#panel_overlay {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(#000, .8);
+	top: 0;
+	left: 0;
+	z-index: 50;
+	&:not(.hidden) {
+		display: flex;
+		justify-content: center;
+	}
+	align-items: center;
+}

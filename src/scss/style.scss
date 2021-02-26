@@ -1,0 +1,250 @@
+@import './vars.scss';
+
+@import './mixin.scss';
+
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.center_column {
+	transition-property: max-width, max-height;
+	transition-duration: $tr_t;
+	transition-timing-function: ease-in-out;
+	opacity: 1;
+	overflow: hidden;
+	max-width: 6000px;
+}
+
+.body_hidden {
+	//opacity: 0;
+	max-height: 0;
+	max-width: 0;
+}
+
+body {
+	background-color: $primary;
+	min-height: 100vh;
+	position:relative;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: $primary-middle;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+/**
+ *general class and properties
+ */
+%title {
+	color: $white;
+	font-family: $font-title;
+
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		@extend %title;
+		font-size: 4em/$i;
+        @if ($i <=2 ) {
+            font-weight: 700;
+            
+        } @else if ($i <= 4) {
+            font-weight: 500;
+            @if ($i == 3) {
+                font-style: italic;
+            }
+        } @else {
+            font-weight: 300;
+        }
+        
+	}
+}
+
+
+
+
+%card {
+	@include border-radius(7%, 45%);
+	background-color: $white;
+	margin: 2%;
+	padding: 4% 2%;
+	box-shadow: $default-shadow;
+    h3 {
+		z-index: 4;
+		position: relative;
+		background-color: $primary-middle;
+		padding: 4% 6%; 
+		width: 100%;
+		box-sizing: border-box;
+	}
+}
+
+.external_card {
+	@extend %card;	
+	padding: 0;
+	overflow: hidden;
+}
+
+.list_item {
+	flex: 1 1 0;
+	border-color: $primary-dark;
+	list-style: none;
+	text-align: center;
+	border: 2px solid $primary-dark;
+	padding: 1%;
+	transition-duration: $tr_t/2;
+	transition-property: box-shadow;
+	transition-timing-function: ease-in-out;
+	@include border-radius(25%, 50%);
+	text-align: center;
+	padding: 1% 4%;
+	box-shadow: $default-shadow, inset $default-shadow;
+	a {
+		font-weight: 400;
+		font-size: 1.35em;
+		padding: 0%;
+		font-family: $font-body;
+		color: $primary-dark;
+	}
+
+	&:hover {
+		box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16), inset 3px 10px 4px rgba(black, .16);
+	}
+
+	&.active {
+		background-color: $primary-dark;
+		border: none;
+		a {
+			color: $white;
+			padding: 0%;
+		}
+	}
+}
+
+
+
+@import './mobile/general.scss';
+/* end general syle */
+/* header style */
+@import './mobile/header.scss';
+/* end header style */
+/* body style */
+@import './mobile/body.scss';
+/* end body style */
+/* footer style */
+@import './mobile/footer.scss';
+/* end footer style */
+/* plugins' style*/
+@import './mobile/plugins.scss';
+/*end plugins' style*/
+
+/* some special query for mobile */
+@media only screen and (max-width: $smb) {
+	header {
+		.content {
+			flex: 1 auto;
+		}
+		.list_item {
+			padding: 2% 4%;
+		}
+	}
+	#students {
+		section.card {
+			.data {
+				font-size: 0.8em;
+			}
+		}	
+	}
+}
+
+/**
+ * media query for tablet view
+*/
+@media only screen and (min-width: $mb ) {
+	/* general style */
+	@import './tablet/general.scss';
+	/* start header style */
+	@import './tablet/header.scss';
+	/* end header style */
+	/* body style */
+	@import './tablet/body.scss';
+	/* end body style */
+	/* plugins style*/
+	@import './tablet/plugins.scss';
+	/* end plugins style*/
+}
+
+/* some special query for space between mobile and tablet */
+@include media($mb, $tb) {
+	.wrap {
+		overflow: hidden;
+		padding-bottom: 12%;
+	}
+}
+
+/**
+ *media query for desktop view
+*/
+@media only screen and (min-width: $tb) {
+	/* end general syle */
+	/* header style */
+	@import './desktop/header.scss';
+	/* end header style */
+	/* body style */
+	@import './desktop/body.scss';
+	/* end body style */
+	/* footer style */
+	@import './desktop/footer.scss';
+	/* end generar */
+	@import './desktop/general.scss';
+	/* end general */
+	/* plugins style*/
+	@import './desktop/plugins.scss';
+	/* end plugins style*/
+}
+
+/* some special query for space between tablet and desktop */
+@include media($tb, 1500px) {
+	.calendar {
+		table {
+			font-size: 0.6em;
+		}
+		#calendar_header {
+			font-size: 0.7em;
+		}
+	}
+}
+
+/* extra media query  for desktop*/
+@include media($tb, 1000px){
+	header {
+		.menu ul {
+			width:96%;
+		}
+	}
+    .card li .data {
+        font-size: 0.7em;
+    }
+    #marks .card article{
+        font-size: 0.6em;
+    }
+	
+	
+}
+
+@include media($tb, 1100px){
+	#students a {
+		font-size: 0.6em;
+	}
+}
+

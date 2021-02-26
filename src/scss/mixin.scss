@@ -1,0 +1,18 @@
+@mixin border-radius($val1, $val2: $val1) {
+	border-top-left-radius: $val1 $val2;
+	border-top-right-radius: $val1 $val2;
+	border-bottom-right-radius: $val1 $val2;
+	border-bottom-left-radius: $val1 $val2;
+}
+@mixin media($min, $max:false) {
+	@if not $max {
+		@media only screen and (min-width: $min) {
+			@content;
+		}
+	}
+	@else {
+		@media only screen and (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	}
+}

@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Práctica 2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- import fonts from google fonts -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+	<link href="css/lib/all.min.css" rel="stylesheet">
+	<!-- end import -->
+	<!-- own style -->
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="media/img/logo.png" sizes="64x64">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="js/lib/jquery.simple-calendar.js"></script>
+	<script src="js/lib/jquery.table2excel.js"></script>
+	<script src="js/database.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/main.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="content">
+			<div class="logo">
+				<a href="index.html"><img t="Web Site Logo"></a>
+			</div>
+			<div class="title">Inicio</div>
+		</div>
+		<nav class="menu">
+			<ul class="navigation">
+				<li><a href="#">Inicio</a></li>
+				<li class="variable_index_buttom"><a href="#students">Alumn@s</a></li>
+				<li><a href="#foro">Foro</a></li>
+				<li><a href="#marks">Notas</a></li>
+				<li><a href="#contact">Contacto</a></li>
+				<li><a href="#close_session" id="logout">Cerrar sesión</a></li>
+			</ul>
+		</nav>
+		<nav class="menu logout hidden">
+			<ul class="navigation">
+				<li><a href="#singup">Registrate</a></li>
+				<li><a href="#login">Iniciar Sesion</a></li>
+			</ul>
+		</nav>
+		<div class="profile_image">
+			<img lt="tu imagen de perfil">
+			<p></p>
+		</div>
+		<div id="menu_hamburger">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+		<div id="toggleLogout" class="list_item">
+			<a href="#login">Login</a>
+		</div>
+	</header>
+
+
+	<main class="wrap">
+		<!-- start left column only visible on desktop. This content is visible into hamburger menu on tablet and mobile views -->
+		<div class="left_column">
+			<nav class="index external_card menu">
+				<h3>Indice</h3>
+				<ul class="navigation">
+					<li class="no_active"><a href="#">Front-End</a></li>
+					<li class="variable_index_buttom"><a href="#students">Alumn@s</a></li>
+					<li><a href="#foro">Foro</a></li>
+					<li><a href="#marks">Notas</a></li>
+				</ul>
+
+			</nav>
+		</div>
+		<!-- end left column -->
+
+		<!-- this web is create with a navigation action using javascript. This allow to implements some efects
+             and transition when user change the page or secction and dont repeat all the content when the real change
+             is very low.        
+             Each div on this level into the dom's hierarchy represent a page or sections and will be display acording it must display
+        -->
+		<!-- start home page -->
+		<div id="home" class="hidden center_column">
+			<section class="card">
+				<h3>Front-End</h3>
+				<p class="sumary">
+					<img alt="imagen descriptiva del primer topic">
+					El primer paso para dominar cualquier habilidad es entender los fundamentos de la misma. En este
+					primer tema aprenderas lo basico sobre HTML, CSS, JavaScript y otras herramientas fundamentales en
+					la construccion de sitios web.</p>
+				<article>
+					<h4 class="point">HTML</h4>
+					<iframe src=""></iframe>
+					</iframe>
+					<p class="sumary">Hyper Text Markup Language o HTML es el lenguaje que se encarga de crear la
+						estructura del sitio web. Este lenguaje compone los cimientos sobre los que se construira tu
+						sitio web. </p>
+				</article>
+				<article>
+					<h4 class="point">CSS</h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">Cascade Style Sheets o CSS se encarga de definir el estilo que seguiran los
+						elementos de tu web. A traves de este lenguaje dotaras a los elementos de tu HTML de un diseño
+						atractivo. </p>
+				</article>
+				<article>
+					<h4 class="point">JavaScript</h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">JavaScript es un lenguaje que se encarga de dotar a tus sitios web de
+						interactividad, cuando haces click en un boton, abres un menu desplegable u observas cambios
+						automaticos en una pagina web, estas siendo testigo del uso de Javascript. </p>
+				</article>
+				<article>
+					<h4 class="point">WebKits</h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">Una parte fundamental en cualquier tipo de desarrollo es el uso de herramientas
+						que potencien tanto la eficiencia como la optimizacion del resultado final. En el desarrollo
+						front-end nos encontramos con diversos frameworks y herramientas que haran que tanto el proceso
+						de creacion como el resultado final sean lo mas optimos y eficientes posible. </p>
+				</article>
+
+			</section>
+
+			<section class="card">
+				<h3>Layouts</h3>
+				<p class="sumary">
+					<img alt="imagen descriptiva del segundo topic">
+					Una de las claves para que un diseño sea atractivo, es la disposicion que siguen los elementos que
+					lo componen, es decir su Layout. En este segundo tema aprenderas diversas tecnicas para la creacion
+					de Layouts, desde el uso de display block o inline hasta la tecnica de mas reciente auge conocida
+					como flex-box. </p>
+				<article>
+					<h4 class="point">Posicionamiento </h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">Una primera aproximacion al diseño de layouts es el uso tanto de posiciones
+						absolutas como relativas. Esta primera opcion cuenta con limitaciones pero es un buen punto de
+						partida en el aprendizaje sobre Layouts. </p>
+				</article>
+				<article>
+					<h4 class="point">Floats </h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">La propiedad float de CSS nos permite posicionar elementos de forma que aparezcan
+						uno al lado del otro y aunque esto puede producir ciertas limitaciones, es una opcion mas que
+						viable.</p>
+				</article>
+				<article>
+					<h4 class="point">Grid Layout</h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">El diseño en Grid es un diseño que permite el manejo bidimensional del Layout, a
+						traves de el aprenderas a controlar la disposicion de elementos mediante el uso de un container.
+					</p>
+				</article>
+				<article>
+					<h4 class="point">Flex Layout</h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">El mas reciente diseño denominado flex-box layout nos permita una mayor
+						flexibilidad a la hora de determinar la posicion de elementos y aunque cuenta con la limitacion
+						de ser unidimensional, es una de las mejores opciones para la construccion de diseños.</p>
+				</article>
+			</section>
+
+
+			<section class="card">
+				<h3>UI/UX</h3>
+				<p class="sumary">
+					<img alt="imagen descriptiva del tercer topic">
+					No todo en el desarrollo front-end es programacion, un aspecto fundamental en el desarrollo de
+					sitios web es el diseño de la interfaz de usuario y el manejo de la experiencia de usuario. En este
+					tercer tema aprenderas los fundamentos que componen un buen diseño de UI/UX para que tus sitios web
+					ofrezcan la mejor experiencia posible. </p>
+				<article>
+					<h4 class="point">UI</h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">La interfaz de usuario es el canal a traves se comunicara tu sitio web con los
+						usuarios por lo que es fundamental adoptar un diseño que sea lo mas atractivo y usable posible.
+					</p>
+				</article>
+				<article>
+					<h4 class="point">UX</h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">Diseñar una buena experiencia de usuario es clave para conseguir una buena
+						retencion de audiencia; usabilidad, interactividad y adaptabilidad son solo tres factores que
+						engloban el campo de la UX.</p>
+				</article>
+				<article>
+					<h4 class="point">Usabilidad </h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">Es necesario que tu sitio web hable el mismo lenguaje que tus usuarios para que
+						estos no tengan ningun problema al hacer uso del mismo. Esto es posible gracias a la usabilidad,
+						dotando tus sitios web de facilidad de uso y aprendizaje.</p>
+				</article>
+				<article>
+					<h4 class="point">Protocolos</h4>
+					<iframe src="">
+					</iframe>
+					<p class="sumary">Existen ciertas tecnicas y protocolos que se han demostrado en numerosas ocasiones
+						que son efectivos a la hora de realizar el diseño de UI/UX. Siempre es importante dotarlos de
+						personalidad pero es buena idea empezar con una base que ya se ha comprobado anteriormente como
+						efectivas.</p>
+				</article>
+			</section>
+		</div>
+		<!-- end home page -->
+		<!-- start students page -->
+		<div id="students" class="hidden center_column listView">
+			<section class="card">
+				<h3>Clase A</h3>
+				<article>
+					<h4>Lista de alumnos</h4>
+					<ul>
+						<li class="student">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>Carina Velasco Vidal</p>
+								<a href="mailto:carina.velasco@mysupercourse.com">
+									carina.velasco@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>Ananías Álvarez Vargas</p>
+								<a href="mailto:ananias.alvarez@mysupercourse.com">ananias.alvarez@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>Adalberto Blesa Álvarez</p>
+								<a href="mailto:adalberto.blesa@mysupercourse.com">adalberto.blesa@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Felipe Prieto Vicente</p>
+								<a href="mailto:felipe.prieto@mysupercourse.com">felipe.prieto@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Rodrigo Montero Benítez</p>
+								<a href="mailto:rodrigo.montero@mysupercourse.com">rodrigo.montero@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Clara Martínez Castro</p>
+								<a href="mailto:clara.martinez@mysupercourse.com">clara.martinez@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Tarsicio Ortiz Parra</p>
+								<a href="mailto:tarsicio.ortiz@mysupercourse.com">tarsicio.ortiz@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Víctor Rubio Calvo</p>
+								<a href="mailto:victor.rubio@mysupercourse.com">victor.rubio@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Esther Crespo Soler</p>
+								<a href="mailto:esther.crespo@mysupercourse.com">esther.crespo@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Enrique Cabrera Flores</p>
+								<a href="mailto:enrique.cabrera@mysupercourse.com">enrique.cabrera@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</article>
+			</section>
+			<section class="card">
+				<h3>Clase B</h3>
+				<article>
+					<h4>Lista de alumnos</h4>
+					<ul>
+						<li class="student">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>Damián Santana Pascual</p>
+								<a href="mailto:damian.santana@mysupercourse.com">damian.santana@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>Rafael Lozano Ramos</p>
+								<a href="mailto:rafael.lozano@mysupercourse.com">rafael.lozano@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>Jesús Crespo Castro</p>
+								<a href="mailto:jesus.crespo@mysupercourse.com">jesus.crespo@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Timoteo Crespo Domínguez</p>
+								<a href="mailto:timoteo.crespo@mysupercourse.com">timoteo.crespo@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Jaime Gómez Peña</p>
+								<a href="mailto:jaime.gomez@mysupercourse.com">jaime.gomez@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Mar Gil Cortés</p>
+								<a href="mailto:mar.gil@mysupercourse.com">mar.gil@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Wilfredo Méndez Durán</p>
+								<a href="mailto:wilfredo.mendez@mysupercourse.com">wilfredo.mendez@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Pío Gutiérrez Vega</p>
+								<a href="mailto:pio.gutierrez@mysupercourse.com">pio.gutierrez@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Asunción Sanz Gutiérrez</p>
+								<a href="mailto:asuncion.sanz@mysupercourse.com">asuncion.sanz@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>José Blanco Blanco</p>
+								<a href="mailto:jose.blanco@mysupercourse.com">jose.blanco@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</article>
+			</section>
+			<section class="card">
+				<h3>Clase C</h3>
+				<article>
+					<h4>Lista de alumnos</h4>
+					<ul>
+						<li class="student">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>Anselmo Medina Román</p>
+								<a href="mailto:anselmo.medina@mysupercourse.com">anselmo.medina@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>Jacob López Martín</p>
+								<a href="mailto:jacob.lopez@mysupercourse.com">jacob.lopez@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>Felipe Soler Hidalgo</p>
+								<a href="mailto:felipe.soler@mysupercourse.com">felipe.soler@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Guzmán Calvo Gil</p>
+								<a href="mailto:guzman.calvo@mysupercourse.com">guzman.calvo@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Ezequiel Núñez Domínguez</p>
+								<a href="mailto:ezequiel.nuñez@mysupercourse.com">ezequiel.nuñez@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Roberto Rubio Navarro</p>
+								<a href="mailto:roberto.rubio@mysupercourse.com">roberto.rubio@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Teófanes Sáez Delgado</p>
+								<a href="mailto:teofanes.saez@mysupercourse.com">teofanes.saez@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Ifigenia Crespo Hernández</p>
+								<a href="mailto:ifigenia.crespo@mysupercourse.com">ifigenia.crespo@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Pancracio Lorenzo Hidalgo</p>
+								<a href="mailto:pancracio.lorenzo@mysupercourse.com">pancracio.lorenzo@mysupercourse.com
+									<i class="fas fa-envelope"></i></a>
+							</div>
+						</li>
+						<li class="student">
+							<div>
+								<img alt="user image">
+							</div>
+							<div class="data">
+								<p>Lourdes Vicente Hidalgo</p>
+								<a href="mailto:lourdes.vicente@mysupercourse.com">lourdes.vicente@mysupercourse.com
+									<i class="fas fa-envelope"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</article>
+			</section>
+		</div>
+		<!-- end students page -->
+		<!-- start foro page -->
+		<div id="foro" class="listView hidden center_column">
+			<section class="card">
+				<h3>Dudas Generales</h3>
+				<article>
+					<h4>Subtema</h4>
+					<ul>
+						<li>
+							<p>Autor: Jaime Gómez Peña</p>
+							<div>
+								<p>Participantes: 32</p>
+								<p>Mensajes: 5</p>
+							</div>
+						</li>
+						<li class="message">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>cave - 02:00 | 00/08/2019</p>
+								<p>Hola! Alguien podria echarme una mano para arreglar el colapso que producen los
+									floats?</p>
+							</div>
+						</li>
+						<li class="message">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>viru - 19:27 | 00/08/2019</p>
+								<p>Buenas. Necesito un poco de ayuda con un problema que tengo con el footer, me esta
+									ocupando toda la pagina y esta bloqueando otros elementos.</p>
+							</div>
+						</li>
+						<li class="message">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>clma - 10:04 | 03/09/2019</p>
+								<p>Buenos dias, me gustaria saber si alguien puede orientarme un poco a cerca de como
+									formar una buena paleta de colores.</p>
+							</div>
+						</li>
+						<li class="message">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>romo - 20:04 | 04/09/2019</p>
+								<p>Hola! Estoy teniendo un problemilla a la hora de posicionar elementos basandome en el
+									z-index, algunos aparece encima de otros sin motivo aparente, alguien podria
+									ayudarme a solucionarlo?</p>
+							</div>
+						</li>
+						<li class="message">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>adbl - 08:11 | 06/09/2019</p>
+								<p>Buenas! Alguien sabria decirme porque tengo ciertas propiedas en mi pagina que yo no
+									he puesto? Me aparece "user style sheet".</p>
+							</div>
+						</li>
+						<li class="add"> <button class="btn_circle_darker--center">+</button> </li>
+					</ul>
+					<div class="textArea hidden">
+						<textarea class="new_message"></textarea>
+						<button class="btn_cancel">Cancelar</button>
+						<button class="btn_ok">Aceptar</button>
+					</div>
+
+				</article>
+			</section>
+			<section class="card">
+				<h3>Grupos de Trabajo</h3>
+				<article>
+					<h4>Subtema</h4>
+					<ul>
+						<li>
+							<p>Autor: Lourdes Vicente Hidalgo</p>
+							<div>
+								<p>Participantes: 14</p>
+								<p>Mensajes: 3</p>
+							</div>
+						</li>
+						<li class="message">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>magi - 22:00 | 06/09/2019</p>
+								<p>Hola! Alguno necesita un nuevo integrante para el proyecto de la Practica 1?</p>
+							</div>
+						</li>
+						<li class="message">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>magi - 16:54 | 00/09/2019</p>
+								<p>Buenas! Mi compañera y yo necesitamos une nueve integrante para la practica final.
+								</p>
+							</div>
+						</li>
+						<li class="message">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>jobl - 17:27 | 01/09/2019</p>
+								<p>Buenos dias! Estamos buscando una pareja para la realizacion de la practica final en
+									grupos de 4. Algune interesade?</p>
+							</div>
+						</li>
+						<li class="add"> <button class="btn_circle_darker--center">+</button> </li>
+					</ul>
+					<div class="textArea hidden">
+						<textarea class="new_message"></textarea>
+						<button class="btn_cancel">Cancelar</button>
+						<button class="btn_ok">Aceptar</button>
+					</div>
+				</article>
+			</section>
+			<section class="card">
+				<h3>Comparticion de Proyectos</h3>
+				<article>
+					<h4>Subtema</h4>
+					<ul>
+						<li>
+							<p>Autor: Felipe Prieto Vicente</p>
+							<div>
+								<p>Participantes: 20</p>
+								<p>Mensajes: 2</p>
+							</div>
+						</li>
+						<li class="message">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>eznu - 04:19 | 02/09/2019</p>
+								<p>Hola a todos! Nos encantaria que visitarais nuestra web y que nos dijerais que os
+									parece.</p>
+							</div>
+						</li>
+						<li class="message">
+							<div>
+								<img lt="user image">
+							</div>
+							<div class="data">
+								<p>lovi - 03:07 | 03/09/2019</p>
+								<p>Buenas! Por fin hemos terminado el proyecto que teniamos en marcha y queremos
+									compartirlo con todos vosotros, esperamos que os guste!</p>
+							</div>
+						</li>
+						<li class="add"> <button class="btn_circle_darker--center">+</button> </li>
+					</ul>
+					<div class="textArea hidden">
+						<textarea class="new_message"></textarea>
+						<button class="btn_cancel">Cancelar</button>
+						<button class="btn_ok">Aceptar</button>
+					</div>
+				</article>
+			</section>
+		</div>
+		<!-- end foro page -->
+		<!-- start marks page -->
+		<div id="marks" class="hidden center_column">
+			<section class="card admin_teach_view">
+				<h3>Clase A</h3>
+				<article>
+					<h4>Lista de notas</h4>
+					<ul>
+						<li class="grades">
+							<div class="name">Estudiante</div>
+							<div>A1</div>
+							<div>A2</div>
+							<div>A3</div>
+							<div>Total</div>
+						</li>
+						<li class="grades">
+							<div class="name">Carina Velasco Vidal</div>
+							<div>9.5</div>
+							<div>5.7</div>
+							<div>0.6</div>
+							<div>5.3</div>
+						</li>
+						<li class="grades">
+							<div class="name">Ananías Álvarez Vargas</div>
+							<div>5.2</div>
+							<div>5.9</div>
+							<div>2.5</div>
+							<div>4.5</div>
+						</li>
+						<li class="grades">
+							<div class="name">Adalberto Blesa Álvarez</div>
+							<div>3.6</div>
+							<div>0.9</div>
+							<div>8.0</div>
+							<div>4.2</div>
+						</li>
+						<li class="grades">
+							<div class="name">Felipe Prieto Vicente</div>
+							<div>4.6</div>
+							<div>2.6</div>
+							<div>0.5</div>
+							<div>2.5</div>
+						</li>
+						<li class="grades">
+							<div class="name">Rodrigo Montero Benítez</div>
+							<div>8.9</div>
+							<div>8.2</div>
+							<div>0.6</div>
+							<div>5.9</div>
+						</li>
+						<li class="grades">
+							<div class="name">Clara Martínez Castro</div>
+							<div>6.1</div>
+							<div>6.9</div>
+							<div>0.2</div>
+							<div>4.4</div>
+						</li>
+						<li class="grades">
+							<div class="name">Tarsicio Ortiz Parra</div>
+							<div>6.7</div>
+							<div>7.9</div>
+							<div>2.8</div>
+							<div>5.8</div>
+						</li>
+						<li class="grades">
+							<div class="name">Víctor Rubio Calvo</div>
+							<div>0.2</div>
+							<div>2.6</div>
+							<div>7.7</div>
+							<div>3.5</div>
+						</li>
+						<li class="grades">
+							<div class="name">Esther Crespo Soler</div>
+							<div>3.0</div>
+							<div>6.2</div>
+							<div>7.1</div>
+							<div>5.4</div>
+						</li>
+						<li class="grades">
+							<div class="name">Enrique Cabrera Flores</div>
+							<div>8.2</div>
+							<div>1.1</div>
+							<div>2.4</div>
+							<div>3.9</div>
+						</li>
+					</ul>
+					<button class="btn--center_darker notes_export">Exportar Notas</button>
+				</article>
+			</section>
+			<section class="card admin_teach_view">
+				<h3>Clase B</h3>
+				<article>
+					<h4>Lista de notas</h4>
+					<ul>
+						<li class="grades">
+							<div class="name">Estudiante</div>
+							<div>A1</div>
+							<div>A2</div>
+							<div>A3</div>
+							<div>Total</div>
+						</li>
+						<li class="grades">
+							<div class="name">Damián Santana Pascual</div>
+							<div>5.7</div>
+							<div>6.9</div>
+							<div>7.1</div>
+							<div>6.6</div>
+						</li>
+						<li class="grades">
+							<div class="name">Rafael Lozano Ramos</div>
+							<div>5.0</div>
+							<div>4.5</div>
+							<div>8.0</div>
+							<div>5.9</div>
+						</li>
+						<li class="grades">
+							<div class="name">Jesús Crespo Castro</div>
+							<div>8.9</div>
+							<div>3.5</div>
+							<div>7.7</div>
+							<div>6.7</div>
+						</li>
+						<li class="grades">
+							<div class="name">Timoteo Crespo Domínguez</div>
+							<div>0.2</div>
+							<div>5.9</div>
+							<div>1.8</div>
+							<div>2.6</div>
+						</li>
+						<li class="grades">
+							<div class="name">Jaime Gómez Peña</div>
+							<div>7.8</div>
+							<div>0.7</div>
+							<div>3.7</div>
+							<div>4.1</div>
+						</li>
+						<li class="grades">
+							<div class="name">Mar Gil Cortés</div>
+							<div>7.4</div>
+							<div>0.3</div>
+							<div>9.0</div>
+							<div>5.6</div>
+						</li>
+						<li class="grades">
+							<div class="name">Wilfredo Méndez Durán</div>
+							<div>7.3</div>
+							<div>6.7</div>
+							<div>2.5</div>
+							<div>5.5</div>
+						</li>
+						<li class="grades">
+							<div class="name">Pío Gutiérrez Vega</div>
+							<div>2.0</div>
+							<div>3.2</div>
+							<div>9.7</div>
+							<div>4.9</div>
+						</li>
+						<li class="grades">
+							<div class="name">Asunción Sanz Gutiérrez</div>
+							<div>1.9</div>
+							<div>7.7</div>
+							<div>0.9</div>
+							<div>3.5</div>
+						</li>
+						<li class="grades">
+							<div class="name">José Blanco Blanco</div>
+							<div>7.5</div>
+							<div>4.2</div>
+							<div>6.6</div>
+							<div>6.1</div>
+						</li>
+					</ul>
+					<button class="btn--center_darker notes_export">Exportar Notas</button>
+				</article>
+			</section>
+			<section class="card admin_teach_view">
+				<h3>Clase C</h3>
+				<article>
+					<h4>Lista de notas</h4>
+					<ul>
+						<li class="grades">
+							<div class="name">Estudiante</div>
+							<div>A1</div>
+							<div>A2</div>
+							<div>A3</div>
+							<div>Total</div>
+						</li>
+						<li class="grades">
+							<div class="name">Anselmo Medina Román</div>
+							<div>0.1</div>
+							<div>9.9</div>
+							<div>2.2</div>
+							<div>4.1</div>
+						</li>
+						<li class="grades">
+							<div class="name">Jacob López Martín</div>
+							<div>5.8</div>
+							<div>9.6</div>
+							<div>6.6</div>
+							<div>7.4</div>
+						</li>
+						<li class="grades">
+							<div class="name">Felipe Soler Hidalgo</div>
+							<div>8.3</div>
+							<div>3.8</div>
+							<div>7.5</div>
+							<div>6.5</div>
+						</li>
+						<li class="grades">
+							<div class="name">Guzmán Calvo Gil</div>
+							<div>9.3</div>
+							<div>10.0</div>
+							<div>5.6</div>
+							<div>8.3</div>
+						</li>
+						<li class="grades">
+							<div class="name">Ezequiel Núñez Domínguez</div>
+							<div>2.2</div>
+							<div>8.8</div>
+							<div>9.1</div>
+							<div>6.7</div>
+						</li>
+						<li class="grades">
+							<div class="name">Roberto Rubio Navarro</div>
+							<div>5.6</div>
+							<div>6.3</div>
+							<div>3.6</div>
+							<div>5.2</div>
+						</li>
+						<li class="grades">
+							<div class="name">Teófanes Sáez Delgado</div>
+							<div>5.4</div>
+							<div>1.5</div>
+							<div>9.6</div>
+							<div>5.5</div>
+						</li>
+						<li class="grades">
+							<div class="name">Ifigenia Crespo Hernández</div>
+							<div>8.5</div>
+							<div>6.9</div>
+							<div>9.2</div>
+							<div>8.2</div>
+						</li>
+						<li class="grades">
+							<div class="name">Pancracio Lorenzo Hidalgo</div>
+							<div>6.1</div>
+							<div>0.4</div>
+							<div>9.8</div>
+							<div>5.4</div>
+						</li>
+						<li class="grades">
+							<div class="name">Lourdes Vicente Hidalgo</div>
+							<div>2.9</div>
+							<div>2.8</div>
+							<div>6.6</div>
+							<div>4.1</div>
+						</li>
+					</ul>
+					<button class="btn--center_darker notes_export">Exportar Notas</button>
+				</article>
+			</section>
+			<section class="card students_view">
+				<h3>Front-End</h3>
+				<article>
+					<h4>Lista de notas</h4>
+					<ul>
+						<li class="grades">
+							<div class="name">Practica </div>
+							<div>Nota</div>
+							<div>/Máx</div>
+							<div>/10</div>
+							<div>Total</div>
+						</li>
+					</ul>
+				</article>
+			</section>
+		</div>
+		<!-- end marks page -->
+		<!-- start sing up page -->
+		<div class="hidden" id="singup">
+			<section class="card">
+				<h3>Registro</h3>
+				<article>
+					<h5 class="hidden">Inicio del formulario</h5>
+					<form action="singup.php" method="POST" id="sing_up_form">
+						<h4>Información de la cuenta</h4>
+						<label for="user_name">Nombre de usuario *</label>
+						<input type="text" name="user_name" id="user_name" required>
+						<label for="NIA">NIA: *</label>
+						<input type="number" min="100000000" max="100999999" id="NIA" name="NIA" required>
+						<label for="psswrd">Contraseña *</label>
+						<input type="password" name="psswrd" id="psswrd_signup" pattern="[a-z0-9]{1,8}" required>
+						<label for="image" class="btn_darker">Sube tu foto de perfil</label>
+						<input type="file" id="image" name="image" accept="image/*" class="hidden">
+						<h4>Información personal</h4>
+						<label for="name">Nombre y apellidos</label>
+						<input type="text" id="name" name="name" required>
+						<label for="email">Email</label>
+						<input type="email" id="email_signup" name="email" required>
+						<label for="bdate">Fecha de nacimiento</label>
+						<input type="date" id="bdate" name="bdate" required>
+						<label for="DNI">Documento de identifiación</label>
+						<input type="text" id="DNI" name="DNI" pattern="[0-9]{8}[A-Z]" required>
+						<p>Tipo de usuario</p>
+						<div class="radio_colection">
+							<input value="admin" type="radio" class="radio first" id="admin" name="rol" required>
+							<label for="admin" class="radio btn">Administrador</label>
+							<input value="profe" type="radio" class="radio" id="profe" name="rol">
+							<label for="profe" class="radio btn">Profesor</label>
+							<input value="student" type="radio" class="radio" id="student" name="rol">
+							<label for="student" class="radio btn">Estudiante</label>
+						</div>
+						<label for="grade" class="line">Grado</label>
+						<select id="grade" required class="line" name="grade">
+							<option value="">Lista de Grados</option>
+							<option value="inf">Ingeniería informatica</option>
+							<option value="ade">ADE</option>
+							<option value="der">Derecho</option>
+							<option value="eco">Economía</option>
+							<option value="rrii">Relaciones internacionales</option>
+						</select>
+						<label for="university">Universidad</label>
+						<input type="text" value="UC3M" name="university" id="university" disabled required>
+						<label>Idioma</label>
+						<div class="radio_colection">
+							<input value="spanish" type="radio" id="spanish" name="lang" class="radio first">
+							<label for="spanish" class="radio btn">Castellano</label>
+							<input value="english" type="radio" id="english" name="lang" class="radio">
+							<label for="english" class="radio btn">Inglés</label>
+							<input value="italian" type="radio" id="italian" name="lang" class="radio">
+							<label for="italian" class="radio btn">Italiano</label>
+						</div>
+						<input type="checkbox" class="line space" required id="condition" name="condition">
+						<label for="condition" class="checkbox line">Acepto los términos y condiciones</label>
+						<div class="actions">
+							<input type="submit" value="Enviar" class="btn_sub">
+							<input type="reset" value="Borrar" class="btn_del"
+								title="Atención! se borrará todo el formulario">
+						</div>
+					</form>
+				</article>
+			</section>
+		</div>
+		<!-- end sing up -->
+		<!-- start login -->
+		<div id="login" class="hidden">
+			<section class="card">
+				<h3>Iniciar Sesion</h3>
+				<article>
+					<h5 class="hidden">Inicio login</h5>
+					<form action="login.php" method="POST" id="login_form">
+						<label for="email">Email</label>
+						<input id="email" name="email" type="email" required placeholder="email">
+						<label for="psswrd">Contraseña</label>
+						<input id="psswrd" name="psswrd" type="password" required placeholder="contraseña">
+						<input type="submit" value="Enviar" class="btn_sub--center">
+					</form>
+				</article>
+			</section>
+		</div>
+		<!-- end login -->
+
+		<!-- start subjects -->
+		<div id="subjects" class="hidden center_column listView">
+			<section class="card">
+				<h3>Mis asignaturas</h3>
+				<article>
+					<h4>Lista de asignaturas</h4>
+					<ul>
+						<li class="subject">
+							<div>
+								<img " alt="front-end image representation">
+							</div>
+							<div class="data">
+								<p><a href="#?s=front">Front - End</a></p>
+								<p class="smll_sumary">Esta asignatura trata las principales tecnologías web aplicadas
+									en el desarrollo del lado del cliente</p>
+							</div>
+						</li>
+						<li class="subject">
+							<div>
+								<img  alt="back-end image representation">
+							</div>
+							<div class="data">
+								<p><a href="#?s=back">Back - End</a></p>
+								<p class="smll_sumary">Esta asignatura trata las principales tecnologías web aplicadas
+									en el desarrollo del lado del servidor</p>
+							</div>
+						</li>
+						<li class="subject">
+							<div>
+								<img lt="ui_ux image representation">
+							</div>
+							<div class="data">
+								<p><a href="#?s=ui_ux">UI & UX</a></p>
+								<p class="smll_sumary">Esta asignatura trata las principales metodologias en el
+									desarrollo de interfaces y experiencias pensadas para el usuario, permitiendo que
+									consiga una gran satisfacción al usar nuestros productos y servicios</p>
+							</div>
+						</li>
+						<li class="subject">
+							<div>
+								<img alt="webkit image representation">
+							</div>
+							<div class="data">
+								<p><a href="#?s=webkit">Webkit</a></p>
+								<p class="smll_sumary">Esta asignatura trata las principales herramientas de desarrollo
+									aplicadas en el desarrollo web full-stack</p>
+							</div>
+						</li>
+						<li class="subject">
+							<div>
+								<img n.png" alt="communication image representation">
+							</div>
+							<div class="data">
+								<p><a href="#?s=communication">Comunicaciones</a></p>
+								<p class="smll_sumary">Esta asignatura pretende mejorar la comunicación entre los
+									diferentes integrantes de un proyecto. Por un lado entre los compañeros y por otro
+									entre el cliente y el desarrollador</p>
+							</div>
+						</li>
+					</ul>
+				</article>
+			</section>
+		</div>
+
+		<!-- start the not finish page -->
+
+		<div id="workingNotEnd" class="hidden center_column">
+			<section class="card">
+				<h3>No hemos encontrado esta página</h3>
+				<article>
+					<h4>Error al general el contenido</h4>
+					<p class="sumary"> Ups! Parece que justo esta sección aún no está terminada. ¿Tal vez disfrutaría
+						más visitando el resto de la web?</p>
+				</article>
+			</section>
+		</div>
+
+		<!-- end not end page -->
+		<!-- start rigth column only visible on desktop -->
+		<div class="rigth_column">
+			<div id="news" class="news external_card">
+				<h3>Últimas noticias</h3>
+				<ul>
+					<li><a href=""><span class="date">10/10</span> - Nueva publicación de videos</a></li>
+					<li><a href=""><span class="date">8/09</span> - Nuevo tema añadido</a></li>
+					<li><a href=""><span class="date">5/09</span> - Nuevos mensajes en el foro</a></li>
+					<li><a href=""><span class="date">3/09</span> - Inicio del curso</a></li>
+					<li><a href=""><span class="date">15/08</span> - Nuevos temas Curos 0</a></li>
+					<li><a href=""><span class="date">5/08</span> - Inicio Curso 0</a></li>
+
+				</ul>
+			</div>
+			<div id="events" class="events external_card">
+				<h3>Próximos Eventos</h3>
+				<div id="calendar">
+
+				</div>
+			</div>
+
+		</div>
+		<!-- end rigth column -->
+
+	</main>
+
+	<footer>
+		<div><a href="https://www.uc3m.es/Inicio">Uc3m </a></div>
+		<div>&#169; Daniel Cano Robledo y Lucas Elvira Martín </div>
+		<div><a href="">Politica de privacidad</a></div>
+	</footer>
+
+
+	<div id="panel_overlay" class="hidden">
+		<div id="pop_up" class="external_card pop_up hidden">
+			<h3>Confirmación de salida</h3>
+			<div class="options">
+				<button class="btn_cancel" id="cancel_logout">Cancelar</button>
+				<button class="btn_ok" id="ok_logout">Salir</button>
+			</div>
+		</div>
+		<div id="alert" class="external_card pop_up hidden">
+			<h3>Default Message</h3>
+			<div class="options">
+				<button class="btn_ok" id="confirm">Aceptar</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

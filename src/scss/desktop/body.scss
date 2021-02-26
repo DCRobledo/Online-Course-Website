@@ -1,0 +1,274 @@
+
+.wrap {
+	display: flex;
+	width: 90%;
+	margin: 5% auto 0% auto;
+	padding-bottom: 16%;
+	&> div {
+		flex: 2 1 50% ;
+	}
+	.left_column, .rigth_column {
+		display: block;
+		flex: 1 1 25% ;
+	}
+	&.logOut {
+		&> div {
+			width: 50%;
+		}
+	}
+	
+}
+section.card {
+	float: left;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	&::before {
+		max-height: 54px;
+		min-height: 30px;
+		height: 10%;
+		margin-right: 2%;
+	}
+	&:first-child {
+		margin-top: 0;
+	}
+	padding: 0;
+	h3 {
+		
+		padding-left: 4%;
+	} 
+	&>.sumary {
+		display: flex;
+		margin-bottom: 2%;
+		img {
+			display: inherit;
+			width: 40%;
+			float: left;
+			margin-right: 6%;
+			flex: 1 0 25%;
+			object-fit: contain;
+
+		}
+		&::after{
+			height: 2px;
+		}
+	}
+	article>h4 {
+		font-size: 1.5em;
+	}
+}
+
+%animation_cardView_ds{
+	max-height: 6000vh;
+}
+
+#news, #events {
+	position: relative;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+#home section.card {
+	@include border-radius(7%, 3%);
+
+    article {
+		&:nth-child(2n+1) {
+			h4 {
+				text-align: left;
+			}
+		}
+		
+        p.sumary {
+            
+            font-size: 1em;
+            text-align: left;
+        }
+        h3::after, h3::before {
+            display: none;
+        }
+        
+        &:nth-child(2n+1) {
+            iframe {
+                float: left;
+            }
+            p.sumary {
+                margin-left: 5%;
+                float: right;
+            }
+        }
+        &:nth-child(2n) {
+            iframe {
+                float: right;
+            }
+            p.sumary {
+                margin-right: 5%;
+                float: left;
+            }
+        }
+    }
+}
+
+#students article {
+	font-size: 1.2em;
+}
+
+#foro {
+	section.card:not(.compact){
+        &:nth-child(1) {
+            @include border-radius(9%, 7%);
+        }
+		&:nth-child(2) {
+			@include border-radius(10%, 8%);
+		}
+		&:nth-child(3) {
+			@include border-radius(7%);
+		}
+	}
+}
+
+
+#marks .card article ul li {
+	font-size: 1.5em;
+	&:first-child {
+		font-weight: bold;
+	}
+}
+
+#mark, .listView {
+    .card {
+        @extend %animation_cardView_ds;
+        article {
+            @extend %animation_cardView_ds;
+        }
+    }
+}
+
+
+#workingNotEnd section.card {
+	@include border-radius(7%, 20%);
+}
+
+
+
+.listView .card li {
+    margin: 4% 5%;
+	div:first-child {
+		flex: 1 0 20%
+	}
+	.data {
+		flex: 4 0 80%;
+		font-size: 1.0em;
+	}
+}
+
+.listView .card article ul li:not(.message){
+	font-size: 1.1em;
+	font-weight: bold;
+	div>p{
+		font-weight: normal;
+	}
+}
+
+.left_column {
+	margin-right: 2%;
+	li {
+		box-shadow: $default-shadow, inset $default-shadow;
+	} 
+}
+.index {
+	@include border-radius(8%, 9%);
+	position: sticky;
+	top: 1%;
+	display: block;
+	margin: 0; 
+	padding: 0;
+	&::before {
+		height: 20%;
+		border-top-left-radius: 8% 39%;
+		border-top-right-radius: 8% 39%;
+	}
+	ul {
+		padding: 4% 12%;
+		li {
+			@extend %list_item;
+			margin: 8% 4%;
+			padding: 2% 0%;
+			@include border-radius(10%, 50%);
+			font-family: $font-body;
+			a {     
+				color: $primary-dark;
+				text-decoration: none;       
+				display: block;
+				padding: 2% 0;
+			}
+			&.no_active {
+				position: relative;
+				&::after {
+					content: "";
+					position: absolute;
+					background-color: $primary-dark;
+					width: 40%;
+					left: 30%;
+					bottom: 18%;
+					height: 2px;
+				}
+			}
+		}
+
+		li.active a{
+			padding: 2% 0;
+		}
+	}
+}
+
+
+.rigth_column {
+	margin: 0;
+	margin-left: 2%;
+	.external_card {
+		@include border-radius(9%, 7%);
+		&::before {
+			display: none;
+			height: 9%;
+			border-top-left-radius: 9% 82%;
+			border-top-right-radius: 9% 82%;
+		}
+		margin-bottom: 10%;
+	}
+	li {
+		list-style: none;
+		padding: 8% 1%;
+		display: flex;
+		position: relative;
+		font-family: $font-body;
+		font-size: 0.9em;
+		&:not(:last-child)::after {
+			content: "";
+			position: absolute;
+			width: 80%;
+			left: 10%;
+			bottom: -2%;
+			height: 2px;
+			background-color: $primary-dark;
+			cursor: pointer;
+		}
+		p, a {
+			text-align: center;
+			width: 100%;
+		}
+		p {
+			color: $font-color;
+		}
+		.date {
+			font-size: 0.8em;
+			font-weight: 400;
+			color: $font-color;
+		}
+
+	}
+}
+
+
+

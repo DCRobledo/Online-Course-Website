@@ -1,0 +1,22 @@
+{
+  "name": "practica_ui",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get your application up and running.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node index.js",
+    "scss": "sass --watch src/scss/style.scss:bin/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/uc3m_projects/practica_ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/uc3m_projects/practica_ui#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass": "^1.26.11"
+  }
+}
